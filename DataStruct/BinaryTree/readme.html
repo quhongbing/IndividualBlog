@@ -13,16 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/archives/2024/"/>
+    <link rel="canonical" href="http://example.com/datastruct/binarytree/readme.html"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
+        <meta name="description" content="二级指针依次取值 flowchart LR     id[int** p     0x003]     id1[int* p     0x001     0x002]     id2[a     10     0x001]     id--第一次取值为* p的地址--&gt;id1     id1--第二次取值为a的值--&gt;id2     id--值相等--&gt;id2  先取得int*(*p)&#x3D;">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
+<meta property="og:url" content="http://example.com/DataStruct/BinaryTree/readme.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="二级指针依次取值 flowchart LR     id[int** p     0x003]     id1[int* p     0x001     0x002]     id2[a     10     0x001]     id--第一次取值为* p的地址--&gt;id1     id1--第二次取值为a的值--&gt;id2     id--值相等--&gt;id2  先取得int*(*p)&#x3D;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-17T13:10:01.668Z">
+<meta property="article:modified_time" content="2024-10-17T13:10:01.668Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -36,7 +40,7 @@
     
     <title>
         
-            Archive: 2024 | Theme Redefine
+            Theme Redefine - Redefine Your Hexo Journey.
         
     </title>
 
@@ -247,78 +251,87 @@
             <div class="main-content">
 
                 
-                    <div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
+                    <div class="page-template-container">
     
-<div class="archive-list-container">
     
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">5</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-07'>
-                    
-                    <a href="/2024/11/07/injection/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">injection</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-06'>
-                    
-                    <a href="/2024/11/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">数据通行基础</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-05'>
-                    
-                    <a href="/2024/11/05/hello-world/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Hello World</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2024/11/05/RSA/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">RSA</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-17'>
-                    
-                    <a href="/2024/07/17/VectorsAndMatrices/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Linear Algebra</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
     
+    <div class="page-template-content markdown-body">
+        
+            <p>二级指针依次取值</p>
+<pre class="mermaid">flowchart LR
+    id[int** p
+    0x003]
+    id1[int* p
+    0x001
+    0x002]
+    id2[a
+    10
+    0x001]
+    id--第一次取值为* p的地址-->id1
+    id1--第二次取值为a的值-->id2
+    id--值相等-->id2</pre>
+<blockquote>
+<p>先取得int*(*p)&#x3D;int*(0x002)&#x3D;10,如果struct不同不知道能否取得</p>
+</blockquote>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="type">int</span> a = <span class="number">100</span> ;</span><br><span class="line">&amp;a ;</span><br><span class="line"><span class="type">int</span>* p = &amp;a;</span><br><span class="line"><span class="type">int</span>* p2 = <span class="literal">NULL</span> ;</span><br><span class="line">p2 = &amp;a ;</span><br><span class="line"><span class="type">int</span> b = <span class="number">200</span> ;</span><br><span class="line">*p2 = b ;</span><br><span class="line"><span class="type">int</span>** p3 = &amp;p2 ;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,** p3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>结果为200</p>
+</blockquote>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="type">int</span> a = <span class="number">100</span> ;</span><br><span class="line">&amp;a ;</span><br><span class="line"><span class="type">int</span>* p = &amp;a;</span><br><span class="line"><span class="type">int</span>* p2 = <span class="literal">NULL</span> ;</span><br><span class="line">p2 = &amp;a ;</span><br><span class="line"><span class="type">char</span> b = <span class="number">200</span> ;</span><br><span class="line">*p2 = b ;</span><br><span class="line"><span class="type">int</span>** p3 = &amp;p2 ;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,** p3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>结果为-56</p>
+</blockquote>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;Node;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">headInsert</span><span class="params">(Node* head_node,<span class="type">int</span> data)</span>&#123;</span><br><span class="line">    Node* node=(Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    node-&gt;next=head_node-&gt;next;             <span class="comment">//将头节点的Next*赋给新建Node-&gt;next</span></span><br><span class="line">    node-&gt;data=data;                        <span class="comment">//</span></span><br><span class="line">    head_node-&gt;next=node;                   <span class="comment">//把头节点的Next*指向当前的新建的节点</span></span><br><span class="line">    head_node-&gt;data++;                      <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>Node结构体指针node指向结构体Node</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTree</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTree</span>* <span class="title">leftChild</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTree</span>* <span class="title">rightChild</span>;</span></span><br><span class="line">&#125;BiTree ;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">createTree</span><span class="params">(BiTree* *T)</span>&#123;   <span class="comment">//*T本质上是一个地址</span></span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;ch);</span><br><span class="line">    <span class="keyword">if</span> (ch == <span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">       *T=<span class="literal">NULL</span>; </span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        (*T)=(BiTree*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTree));</span><br><span class="line">        (*T)-&gt;data=ch;</span><br><span class="line">        createTree(&amp;((*T)-&gt;leftChild));      <span class="comment">//  (*T)-&gt;leftChild访问当前地址，结构体中的leftChild.leftChild嵌在头节点里</span></span><br><span class="line">        createTree(&amp;((*T)-&gt;rightChild));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>BiTree结构体指针*root指针指向结构体BinaryTree</p>
+<pre class="mermaid">graph LR
+    subgraph node1
+    direction LR
+        p[p]
+        add[0x001]
+        a[a]
+        val1[1]
+    end
+    subgraph node2
+    direction LR
+        *p[*p]
+        add1[0x002]
+        b[b]
+        a_addr[0x001]
+    end
+    subgraph node3
+    direction LR
+        **p[**p]
+        add2[0x003]
+        *b[*b]
+        b_addr[0x002]
+    end
+    subgraph node4
+    direction LR
+        int*[int*]
+        add3[0x004]
+    end
+    subgraph node5
+    direction LR
+        int[5]
+        add4[0x005]
+    end
+    *b-->a_addr
+    b-->val1
+    *b--让该指针重新指
+        向新开辟的空间-->int*
+    add3--**p=3操作让0x004指向的
+               对象值为3-->node5</pre>
+
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> **p)</span>&#123;</span><br><span class="line">    **p=<span class="number">2</span>;</span><br><span class="line">    *p=(<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    **p=<span class="number">3</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,**p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a =<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> *b =&amp;a;</span><br><span class="line">    f(&amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d&quot;</span>,a,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+        
+    </div>
+    <div class="page-template-comments">
+        
+    </div>
 </div>
 
-</div>
 
                 
 
